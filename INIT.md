@@ -8,6 +8,27 @@ Wire the strictest available static toolchain into a script or CI check before a
 
 In languages that allow both quote styles (Python, TypeScript, Shell), string literals and docstrings use single quotes, and the toolchain carries that from the first commit rather than the prose. A string that would escape many single quotes of its own, or a shell string whose variables must expand, keeps double quotes.
 
+## Supply chain cooldown
+
+Every package manager in the tree refuses dependency versions published within the last 15 days.
+
+uv, in `pyproject.toml`, or at the top level of `uv.toml`:
+
+```toml
+[tool.uv]
+exclude-newer = "15 days"
+```
+
+pnpm, in `pnpm-workspace.yaml`, in minutes:
+
+```yaml
+minimumReleaseAge: 21600
+```
+
+Cargo ignores `registry.global-min-publish-age` with a warning unless it runs under nightly `-Zmin-publish-age`, so a stable toolchain has no cooldown gate yet. Check the publication dates that a `cargo update` brings in manually until the feature stabilizes.
+
+A version inside the window is admitted per package, through `exclude-newer-package` or `minimumReleaseAgeExclude`.
+
 ## Propagate the constitutions
 
 ```shell
