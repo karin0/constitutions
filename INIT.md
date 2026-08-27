@@ -33,7 +33,6 @@ A version inside the window is admitted per package, through `exclude-newer-pack
 
 ```bash
 ln -s ~/.constitutions/CONSTITUTIONS.md ./
-ln -s ~/.constitutions/CONSTITUTIONS.md ~/.claude/rules/
 ln -s CONSTITUTIONS.md AGENTS.md
 ln -s CONSTITUTIONS.md CLAUDE.md
 ```
