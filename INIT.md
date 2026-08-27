@@ -28,3 +28,12 @@ minimumReleaseAge: 21600
 Cargo ignores `registry.global-min-publish-age` with a warning unless it runs under nightly `-Zmin-publish-age`, so a stable toolchain has no cooldown gate yet. Check the publication dates that a `cargo update` brings in manually until the feature stabilizes.
 
 A version inside the window is admitted per package, through `exclude-newer-package` or `minimumReleaseAgeExclude`.
+
+## Propagate this document
+
+```bash
+ln -s ~/.constitutions/CONSTITUTIONS.md ./
+ln -s ~/.constitutions/CONSTITUTIONS.md ~/.claude/rules/
+ln -s CONSTITUTIONS.md AGENTS.md
+ln -s CONSTITUTIONS.md CLAUDE.md
+```
