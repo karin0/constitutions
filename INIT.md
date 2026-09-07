@@ -37,12 +37,7 @@ codegen-units = 1
 
 Every package manager in the tree refuses dependency versions published within the last 15 days.
 
-uv, in `pyproject.toml`, or at the top level of `uv.toml`:
-
-```toml
-[tool.uv]
-exclude-newer = '15 days'
-```
+The uv setting is part of the pyproject skeleton in `PYTHON.md` beside this file.
 
 pnpm, in `pnpm-workspace.yaml`, in minutes:
 

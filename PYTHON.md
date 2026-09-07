@@ -2,9 +2,12 @@
 
 Fires once per tree, from `INIT.md` beside this file. The standing Python rules live in the Python section of `CONSTITUTIONS.md`.
 
-ruff selects `["ALL", "ANN401"]` against a curated ignore list, keeping ANN401 while the rest of the ANN family stays ignored. This skeleton is the starting point; each further ignore is added against a rule that actually fired, with a comment when the reason is not evident from the rule name.
+ruff selects `["ALL", "ANN401"]` against a curated ignore list, keeping ANN401 while the rest of the ANN family stays ignored. This skeleton is the starting point; each further ignore is added against a rule that actually fired, with a comment when the reason is not evident from the rule name. The uv table carries the supply chain cooldown from `INIT.md`.
 
 ```toml
+[tool.uv]
+exclude-newer = "15 days"
+
 [tool.ruff]
 line-length = 100
 target-version = "py314"
