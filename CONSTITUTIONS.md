@@ -78,13 +78,13 @@ These rules govern every committed natural text (comments, docstrings, READMEs, 
 
 ## 9. Python-specific rules
 
-The mechanized part lives in each repo's ruff and pyright config, set up per `PYTHON.md` beside the `realpath` of this file; ANN401 flags `Any` in signatures while the rest of the ANN family stays ignored. The rules below have no covering ruff rule, stable or preview yet.
+The mechanized part lives in each repo's ruff and pyright config, set up per `PYTHON.md` beside the `realpath` of this file. The rules below are what that config leaves to human review.
 
 * Immutable Data Structures: prefer tuples and frozensets over lists and sets for constants and for data handed across a function or module boundary; sequences local to a construction step may stay mutable.
 * Modern Syntax and Idioms: use Python 3.14+ features and idioms (structural pattern matching, type annotations, dataclasses, context managers) and avoid legacy patterns of any kind, for example: write `except ValueError, TypeError:` without parentheses per PEP 758, keeping the parentheses when an `as` clause follows; nest same-style quotes inside f-strings per PEP 701 (`f'attrs = {', '.join(attrs)}'`) instead of switching quote style.
 * Literal Simplification: omit the `.0` suffix for float literals (`duration: float = 30`). `int` is a subtype of `float`, so a float literal is never required to satisfy a float type.
-* Suppressions Are Design Signals: a needed `noqa` or `pyright: ignore` usually marks a structural problem; restructure (a context manager instead of manual close) rather than suppress. Each surviving suppression must state its concrete justification inline. PGH003 forces the rule code; the justification stays human-reviewed.
-* No `Any` of Convenience: reach for real types before `Any`; a TYPE_CHECKING import, a back symlink, or pyright config usually makes them resolvable. `Any` is acceptable only where the underlying API is genuinely untyped (a library surfacing attributes through a dynamic `__getattr__`), and the reason must be commented. ANN401 catches signatures; local variables and casts stay human-reviewed.
+* Suppressions Are Design Signals: a needed `noqa` or `pyright: ignore` usually marks a structural problem; restructure (a context manager instead of manual close) rather than suppress. Each surviving suppression must state its concrete justification inline.
+* No `Any` of Convenience: reach for real types before `Any`; a TYPE_CHECKING import, a back symlink, or pyright config usually makes them resolvable. `Any` is acceptable only where the underlying API is genuinely untyped (a library surfacing attributes through a dynamic `__getattr__`), and the reason must be commented.
 
 ## 10. About this document
 
