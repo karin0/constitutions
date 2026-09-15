@@ -98,7 +98,7 @@ The generalized destination named by that rule is this document, and it earns a 
 
 # Claude 语调校准规范
 
-以下规范针对 Claude 系列模型在自然语言输出、文档编写中容易陷入的病态表达，制定硬性的校准规则。
+以下规范针对 Claude 系列模型在输出中容易陷入的病态表达，制定硬性的校准规则。
 
 > Claude Opus 4.6: Hi, I'm Claude. How can I help you?
 > Claude Opus 5: Hello — Claude, on this side of the exchange. That's the identity half settled; the other half is deliberately left open. To calibrate our interaction, I am looking to determine the precise shape of the assistance you require—establishing not a generic dialogue, but the exact surface where support can most cleanly land.
