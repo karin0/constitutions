@@ -183,3 +183,18 @@ Claude 常犯的错误是把三句话强行压缩成一个充满抽象名词和�
 | 错误写法 | 正确写法 |
 |---|---|
 | 这里其实有两种超时。连接超时限制的是 TCP 握手阶段，读取超时限制的是连接建立之后等待服务端返回数据的时间。这次请求的连接本身成功建立了，所以连接超时在这里已经不起作用。这段代码没有设置读取超时，如果服务端在读取阶段失去响应，后续的请求处理流程就会一直挂起，解决方法是加上读取超时。当然，连接超时本身并没有设错，它在握手失败时依然有效，只是这次的挂起和它无关，所以即使把连接超时调得再短，也不会阻止请求处理流程一直挂起。 | 这段代码没有设置读取超时，只有连接超时。如果服务端在读取阶段失去响应，后续的请求处理流程就会一直挂起。解决方法是加上读取超时。 |
+
+## 6. 动作用动词叙述，标题用名词短语
+
+Claude 习惯先把一件事压成一个名词，放到主语位置上，再接一个系动词（「What Claude Code answered is markdown」、「Where each session is is written to state.json」）。把名词性从句换成名词短语（「Claude Code's own answer is markdown」）只是换了个外形，句子里依然没有一个做事的动词。
+
+* 叙述一个动作时，由做这个动作的程序、文件或人当主语，用动词说出这个动作。不要把动作包成名词性从句或名词短语，再用「is」「是」接上。
+* 小标题是话题，用名词短语写（「Chat messages」），不用 What、Why、When 开头的从句。提交摘要用祈使句的动词开头，宾语写成具体的名词（「trim the README to the facts the code cannot show」），不写成从句（「to what the code cannot tell」）。
+
+| 错误写法 | 正确写法 |
+|---|---|
+| What Claude Code answered is markdown. | Claude Code answers in markdown. |
+| Where each session is is written to state.json as it changes. | tracker.py writes the location of each session to state.json as it changes. |
+| ## What you can send | ## Replies and commands |
+| docs: say what it does in plain verbs | docs: describe the program in plain verbs |
+| 用户所输入的内容是通过粘贴缓冲区完成传递的。 | input.py 把用户输入的内容写进 tmux 的粘贴缓冲区，再粘贴到终端里。 |
