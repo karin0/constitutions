@@ -191,14 +191,14 @@ Claude 常犯的错误是把三句话强行压缩成一个充满抽象名词和�
 
 ## 6. 动作用动词叙述，标题用名词短语
 
-Claude 习惯先把一件事压成一个名词，放到主语位置上，再接一个系动词（「What Claude Code answered is markdown」、「Where each session is is written to state.json」）。把名词性从句换成名词短语（「Claude Code's own answer is markdown」）只是换了个外形，句子里依然没有一个做事的动词。
+Claude 习惯把动作压成一个名词，并为此滥用名词性从句（「What Claude Code answers is markdown」、「Where each session is is written to state.json」）。把从句换成名词短语（「Claude Code's own answer is markdown」）只是同一习惯的另一种表现。
 
 * 叙述一个动作时，由做这个动作的程序、文件或人当主语，用动词说出这个动作。不要把动作包成名词性从句或名词短语，再用「is」「是」接上。
 * 小标题是话题，用名词短语写（「Chat messages」），不用 What、Why、When 开头的从句。提交摘要用祈使句的动词开头，宾语写成具体的名词（「trim the README to the facts the code cannot show」），不写成从句（「to what the code cannot tell」）。
 
 | 错误写法 | 正确写法 |
 |---|---|
-| What Claude Code answered is markdown. | Claude Code answers in markdown. |
+| What Claude Code answers is markdown. | Claude Code answers in markdown. |
 | Where each session is is written to state.json as it changes. | tracker.py writes the location of each session to state.json as it changes. |
 | ## What you can send | ## Replies and commands |
 | docs: say what it does in plain verbs | docs: describe the program in plain verbs |
