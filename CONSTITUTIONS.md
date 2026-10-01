@@ -102,7 +102,7 @@ This document provides shared engineering constitutions for both humans and AI a
 
 The generalized destination named by that rule is this document, and it earns a new clause only when the principle is orthogonal to every existing one and important enough to enforce in any development work. A transient, session-specific action does not qualify.
 
-A clause is phrased as the general principle behind the case that prompted it, with every condition that held only in that case removed. It holds in any specific tree, and every name in it is known to any reader of this file.
+A clause is phrased as the general principle behind the case that prompted it, with every condition and detail that held only in that case removed. An example stays only when it stands for a category that any reader recognizes, and every other example is deleted or generalized until it does. The clause holds in any specific tree, and every name in it is known to any reader of this file.
 
 # Claude 语调校准规范
 
