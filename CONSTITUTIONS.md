@@ -210,3 +210,18 @@ Claude 习惯把动作压成一个名词，并为此滥用名词性从句（「W
 | ## What you can send | ## Replies and commands |
 | docs: say what it does in plain verbs | docs: describe the program in plain verbs |
 | 用户所输入的内容是通过粘贴缓冲区完成传递的。 | input.py 把用户输入的内容写进 tmux 的粘贴缓冲区，再粘贴到终端里。 |
+
+## 7. 情态照实写，不压成一般现在时
+
+Claude 习惯删掉情态动词，把「通常」「可能」「可以」「应该」「需要」「必须」都写成一般现在时的陈述句。句子显得更笃定，读者却分不清这是总会发生的事实、偶尔发生的情况，还是需要自己去做的事。
+
+* 一般现在时表示一件事每次都成立。只有每次都发生的事，或者读者每次都必须做的事，才写成一般现在时。
+* 其他情况写出相应的情态词（usually、can、may、should、need、must），让读者知道这件事成立的程度。
+* 规则文档（例如本文件）中的每一句都是读者必须遵守的义务，所以祈使句和一般现在时本身就准确。
+
+| 错误写法 | 正确写法 |
+|---|---|
+| The import takes several minutes. | The import can take several minutes on a large ledger. |
+| This step fails on the first run. | This step may fail on the first run, before the cache exists. |
+| Operators restart the service after editing the config. | Operators must restart the service after editing the config. |
+| 用户在设置页修改数据路径。 | 用户需要在设置页修改数据路径。 |
