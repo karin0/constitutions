@@ -99,13 +99,9 @@ The mechanized part lives in each repo's ruff and pyright config, set up per `PY
 
 ## 10. About this document
 
-This document provides shared engineering constitutions for humans and AI agents, typically at `~/.constitutions/CONSTITUTIONS.md`. Every section above the Python rules is agnostic to any specific project, programming language, framework, and deployment. Setup that fires once per tree lives in `INIT.md`. A concrete repo, tool version, or deployment detail belongs in the owning tree's map document, typically `README.md`.
+This document provides shared engineering constitutions for humans and AI agents, typically at `~/.constitutions/CONSTITUTIONS.md`. Setup that fires once per tree lives in `INIT.md`. A concrete repo, tool version, or deployment detail belongs in the owning tree's map document, typically `README.md`.
 
-* Principles Live in the Repository, Not in a Sketchpad: when collaboration produces a durable engineering norm (a correction, a convention, a generalized lesson), commit it to this document if it can be generalized, and to README.md otherwise. An agent's memory is transient, personal, and unenforceable. This file is version-controlled, shared by every repo and every future session, and is the single owner of the constraints. A promise to behave differently is memory of exactly that kind. Answer with the correction and with something that would catch the next one, either a check that can run or a rule sharpened in this file. This rule applies to itself.
-
-A principle that rule sends to this document earns a new clause only when it is orthogonal to every existing clause and important enough to enforce in any development work. A transient, session-specific action does not qualify.
-
-A clause is phrased as the general principle behind the case that prompted it, with every condition and detail that held only in that case removed. An example stays only when it stands for a category that any reader recognizes, and every other example is deleted or generalized until it does. The clause holds in any specific tree, and every name in it is known to any reader of this file.
+* Principles Live in the Repository, Not in a Sketchpad: when collaboration produces a durable engineering norm (a correction, a convention, a generalized lesson), commit it to this document if it can be generalized, and to README.md otherwise. A change to this document follows `AMEND.md` beside the `realpath` of this file. An agent's memory is transient, personal, and unenforceable. This file is version-controlled, shared by every repo and every future session, and is the single owner of the constraints. A promise to behave differently is memory of exactly that kind. Answer with the correction and with something that would catch the next one, either a check that can run or a rule sharpened in this file. This rule applies to itself.
 
 # Claude 语调校准规范
 
