@@ -45,6 +45,14 @@ pnpm, in `pnpm-workspace.yaml`, in minutes:
 minimumReleaseAge: 21600
 ```
 
+pinact, which pins and updates GitHub Actions, in `.pinact.yaml`, in days:
+
+```yaml
+version: 3
+min_age:
+  value: 15
+```
+
 Cargo ignores `registry.global-min-publish-age` with a warning unless it runs under nightly `-Zmin-publish-age`, so a stable toolchain has no cooldown gate yet. Check the publication dates that a `cargo update` brings in manually until the feature stabilizes.
 
-A version inside the window is admitted per package, through `exclude-newer-package` or `minimumReleaseAgeExclude`.
+A version inside the window is admitted per package, through `exclude-newer-package`, `minimumReleaseAgeExclude`, or a pinact rule with `min_age: 0`.
