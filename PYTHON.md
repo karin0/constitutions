@@ -1,8 +1,8 @@
 # Python toolchain for a new tree
 
-Fires once per tree, from `INIT.md` beside this file. The standing Python rules live in the Python section of `CONSTITUTIONS.md`.
+Runs once per tree, as a step of `INIT.md` beside this file. The standing Python rules live in the Python section of `CONSTITUTIONS.md`.
 
-ruff selects `["ALL", "ANN401"]` against a curated ignore list, keeping ANN401 while the rest of the ANN family stays ignored. This skeleton is the starting point; each further ignore is added against a rule that actually fired, with a comment when the reason is not evident from the rule name. The uv table carries the supply chain cooldown from `INIT.md`.
+ruff selects `["ALL", "ANN401"]` against a curated ignore list, keeping ANN401 while the rest of the ANN family stays ignored. This skeleton is the starting point; each further ignore is added against a rule that actually fired, with a comment when the reason is not evident from the rule name. The `[tool.uv]` table sets the supply chain cooldown from `INIT.md`.
 
 ```toml
 [tool.uv]
@@ -24,7 +24,7 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "*/cli.py" = ["T20"]
 "**/tests/*" = ["ANN201", "B018", "INP001", "PLW0108", "PT018", "S101", "SIM105", "T20",
-                # Fixtures stand in for credentials, which is what makes them fixtures.
+                # Fixtures hold fake credentials.
                 "S105", "S106"]
 
 [tool.ruff.lint.flake8-tidy-imports.banned-api]
