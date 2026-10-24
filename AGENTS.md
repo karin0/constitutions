@@ -2,19 +2,19 @@
 
 These rules govern every change to `CONSTITUTIONS.md`, `INIT.md`, and `PYTHON.md`.
 
-These documents state obligations in the imperative or the simple present tense.
+These documents may state obligations in the imperative or the simple present tense.
 
-A change made during work in another tree stays uncommitted in this repository for a later review.
+A change made during work in another tree must stay uncommitted in this repository for a later review.
 
-Every section of `CONSTITUTIONS.md` above the Python rules is agnostic to any specific project, programming language, framework, and deployment.
+Every section of `CONSTITUTIONS.md` above the Python rules must be agnostic to any specific project, programming language, framework, and deployment.
 
-A principle becomes a new clause of `CONSTITUTIONS.md` only when it is orthogonal to every existing clause and important enough to enforce in any development work. A transient, session-specific action does not qualify.
+A principle may become a new clause of `CONSTITUTIONS.md` only when it is orthogonal to every existing clause and important enough to enforce in any development work. A transient, session-specific action does not qualify.
 
-A clause is phrased as the general principle behind the case that prompted it, with every condition and detail that held only in that case removed. An example stays only when it stands for a general category that anyone recognizes without any context, and every other example is deleted. The clause holds in any specific tree, and every name in it is known to any reader of `CONSTITUTIONS.md`.
+A clause must be phrased as the general principle behind the case that prompted it, with every condition and detail that held only in that case removed. An example may stay only when it stands for a general category that anyone recognizes without any context, and every other example must be deleted. The clause must hold in any specific tree, and every name in it must be known to any reader of `CONSTITUTIONS.md`.
 
 ## Commit types
 
-The documents here are the product, so the Conventional Commits type of a commit says what happened to the rules rather than staying a constant `docs:`.
+The documents here are the product, so the Conventional Commits type of a commit must state what happened to the rules rather than stay a constant `docs:`.
 
 - `feat`: a new, broadened, or narrowed rule.
 - `fix`: a statement that was wrong about a fact.
