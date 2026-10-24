@@ -2,6 +2,8 @@
 
 These rules govern every change to `CONSTITUTIONS.md`, `INIT.md`, and `PYTHON.md`.
 
+These documents state obligations in the imperative or the simple present tense.
+
 A change made during work in another tree stays uncommitted in this repository for a later review.
 
 Every section of `CONSTITUTIONS.md` above the Python rules is agnostic to any specific project, programming language, framework, and deployment.
