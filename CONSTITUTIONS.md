@@ -124,12 +124,15 @@ Claude 习惯在每句话中否定一个没人提过的观点（「不是 X，�
 
 * 直接陈述系统发生的事实，让不在场的事物自己保持沉默。
 * 除非相反的误解可以预见，否则禁止使用否定先行的句式。
+* 否定的事实直接否定它的动词或主语，条件也写成肯定式。「is never given」「differed in none」这类写法把否定放在别处，读者要在脑中倒转一遍才能读懂。
 
 | 错误写法 | 正确写法 |
 |---|---|
 | 这里的核心分野不是排期推进，而是工效摩擦的观测留白。 | 反馈文档中只记录使用中发现的痛点和想法，不承诺它们一定会被实现。 |
 | 这是一套契约，不是普通的功能实现。 | 这是一套调用方必须遵守的接口契约。 |
 | 我不会说问题在于数据库读写太慢。旧数据说明的是缓存更新丧失了时效性。 | 缓存没有及时更新，导致页面读到了旧数据。 |
+| The two runs differed in none of the fields. | No field differed between the two runs. |
+| Reject the input unless every constraint holds. | Reject any input that violates a constraint. |
 
 ## 2. 用具体物理动作，禁止伪架构黑话
 
