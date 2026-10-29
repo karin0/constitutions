@@ -217,6 +217,7 @@ Claude 习惯删掉情态动词，把「通常」「可能」「可以」「应�
 * 一般现在时表示一件事每次都成立。只有每次都发生的事，才写成一般现在时。
 * 其他情况写出相应的情态词（usually、can、may、should、need、must），让读者知道这件事成立的程度。
 * 写完一句一般现在时的句子，加上 always 再读一遍。如果加上以后句子不成立，就换成相应的情态词。
+* never 只表示频率，说的是一件事在任何时候都没有发生。说明一件事做不到时，写 cannot。说明次数的上限时，写出这个次数，例如 at most once。
 
 | 错误写法 | 正确写法 |
 |---|---|
@@ -224,3 +225,5 @@ Claude 习惯删掉情态动词，把「通常」「可能」「可以」「应�
 | This step fails on the first run. | This step may fail on the first run, before the cache exists. |
 | Operators restart the service after editing the config. | Operators must restart the service after editing the config. |
 | 用户在设置页修改数据路径。 | 用户需要在设置页修改数据路径。 |
+| The parser never reads past the end of the buffer. | The parser cannot read past the end of the buffer. |
+| The client never sends a request twice. | The client sends each request at most once. |
