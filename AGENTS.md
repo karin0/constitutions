@@ -4,7 +4,7 @@ These rules govern every change to `CONSTITUTIONS.md`, `INIT.md`, and `PYTHON.md
 
 These documents may state obligations in the imperative or the simple present tense.
 
-A change made during work in another tree must stay uncommitted in this repository for a later review.
+A change made during work in another tree must stay uncommitted in this repository for a later review. The agent that made the change must report it once and must not track it as pending work of the other tree.
 
 Every section of `CONSTITUTIONS.md` above the Python rules must be agnostic to any specific project, programming language, framework, and deployment.
 
