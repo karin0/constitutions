@@ -17,7 +17,7 @@ A clause must be phrased as the general principle behind the case that prompted 
 The documents here are the product, so the Conventional Commits type of a commit must state what happened to the rules rather than stay a constant `docs:`.
 
 - `feat`: a new, broadened, or narrowed rule.
-- `fix`: a statement that was wrong about a fact.
+- `fix`: a statement that was wrong about a fact or that its rule did not intend.
 - `style`: wording and sentence structure, with every rule keeping its meaning.
 - `refactor`: a fact moved between clauses or documents, requiring the same thing afterwards.
 - `chore`: repository plumbing that states no rule.
