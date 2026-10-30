@@ -1,6 +1,6 @@
 # Amending the constitutions
 
-These rules govern every change to `CONSTITUTIONS.md`, `INIT.md`, and `PYTHON.md`.
+These rules govern every change to `CONSTITUTIONS.md`, `INIT.md`, `PYTHON.md`, and `CLOUD.md`.
 
 These documents may state obligations in the imperative or the simple present tense.
 
