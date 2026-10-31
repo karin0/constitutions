@@ -4,7 +4,7 @@ These steps run once, when a project tree is created. The standing constraints l
 
 ## Static toolchain before implementation
 
-Before any implementation, add the strictest available static toolchain to a script or CI check that rejects a failing change: a formatter, strict linting, and type checking with a deliberately curated ignore list. Python follows `PYTHON.md` beside this file, Rust and TypeScript follow the sections below, and another ecosystem uses its own equivalent.
+Before any implementation, add the strictest available static toolchain to the tree's verification flow, where a failing check rejects the change. The toolchain has a formatter, strict linting, and type checking with a deliberately curated ignore list. Python follows `PYTHON.md` beside this file, Rust and TypeScript follow the sections below, and another ecosystem uses its own equivalent.
 
 In languages that allow both quote styles (Python, TypeScript, Shell), string literals and docstrings use single quotes, and the toolchain enforces that from the first commit. A string that would escape many single quotes of its own, or a shell string whose variables must expand, keeps double quotes.
 
