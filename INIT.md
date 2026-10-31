@@ -4,13 +4,13 @@ These steps run once, when a project tree is created. The standing constraints l
 
 ## Static toolchain before implementation
 
-Before any implementation, add the strictest available static toolchain to a script or CI check that rejects a failing change: a formatter, strict linting, and type checking with a deliberately curated ignore list. uv, ruff and pyright for Python, following `PYTHON.md` beside this file; `cargo fmt` and `clippy` for Rust, at the levels below; Prettier, tsc and oxlint for TypeScript, as described below; the ecosystem equivalent elsewhere.
+Before any implementation, add the strictest available static toolchain to a script or CI check that rejects a failing change: a formatter, strict linting, and type checking with a deliberately curated ignore list. Python follows `PYTHON.md` beside this file, Rust and TypeScript follow the sections below, and another ecosystem uses its own equivalent.
 
 In languages that allow both quote styles (Python, TypeScript, Shell), string literals and docstrings use single quotes, and the toolchain enforces that from the first commit. A string that would escape many single quotes of its own, or a shell string whose variables must expand, keeps double quotes.
 
-### Rust lint levels and release profile
+### Rust toolchain and release profile
 
-In `Cargo.toml`:
+`cargo fmt` formats the code with its defaults, and clippy lints it at these levels in `Cargo.toml`:
 
 ```toml
 [lints.rust]
