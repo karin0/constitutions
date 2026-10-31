@@ -22,7 +22,6 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"*/cli.py" = ["T20"]
 "**/tests/*" = ["ANN201", "B018", "INP001", "PLW0108", "PT018", "SIM105", "T20",
                 # Fixtures hold fake credentials.
                 "S105", "S106"]
