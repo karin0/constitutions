@@ -11,7 +11,7 @@ exclude-newer = "15 days"
 [tool.ruff]
 line-length = 100
 target-version = "py314"
-# src = ["src"]  # For workspaces only.
+# src = [...]  # Workspace member source roots, see below.
 
 [tool.ruff.lint]
 select = ["ALL", "ANN401"]
@@ -42,11 +42,11 @@ lines-between-types = 1
 quote-style = "preserve"
 
 [tool.pyright]
-# include = ["src"]  # For workspaces only.
+# include = [...]  # Workspace member source roots, see below.
 typeCheckingMode = "strict"
 pythonVersion = "3.14"
 ```
 
 ## uv workspace
 
-A workspace root carries no `requires-python`, which otherwise tells ruff which modules are first-party and which are stdlib. List every member source root in ruff `src` and in pyright `include`, and repeat the list in pyright `extraPaths` so the members resolve as sources rather than as installed libraries.
+ruff resolves first-party imports only from the directories in `src`, whose default covers the root and its `src` directory. List every member source root in ruff `src` and in pyright `include`, and repeat the list in pyright `extraPaths` so the members resolve as sources rather than as installed libraries.
