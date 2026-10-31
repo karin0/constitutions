@@ -35,7 +35,7 @@ codegen-units = 1
 
 ## Supply chain cooldown
 
-Every package manager in the tree refuses dependency versions published within the last 15 days.
+Every package manager in the tree that has a release age setting refuses dependency versions published within the last 15 days.
 
 The uv setting is part of the pyproject skeleton in `PYTHON.md` beside this file.
 
@@ -53,6 +53,6 @@ min_age:
   value: 15
 ```
 
-Cargo ignores `registry.global-min-publish-age` with a warning unless it runs under nightly `-Zmin-publish-age`, so a stable toolchain has no cooldown gate yet. Check the publication dates that a `cargo update` brings in manually until the feature stabilizes.
+Cargo ignores `registry.global-min-publish-age` with a warning unless it runs under nightly `-Zmin-publish-age`, so a stable toolchain has no release age setting yet.
 
 A version inside the window is admitted per package, through `exclude-newer-package`, `minimumReleaseAgeExclude`, or a pinact rule with `min_age: 0`.
