@@ -22,7 +22,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"**/tests/*" = ["ANN201", "B018", "INP001", "PLW0108", "PT018", "S105", "S106", "SIM105", "T20"]
+"**/tests/*" = ["INP001"]
 
 [tool.ruff.lint.flake8-tidy-imports.banned-api]
 "__future__.annotations".msg = "PEP 649 lazy annotations are the 3.14 default"
