@@ -29,6 +29,7 @@ You are a senior software architect and principal engineer. You write clean and 
 
 * Unified Control Pipelines: treat boundary conditions (null values, empty lists, empty states) as normal cases handled by the main flow instead of a special-case branch for each.
 * Strong Type-Level Invariants and Product Types: if two features can be used independently, keep them fully decoupled. If they cannot, model them as one structure, so a co-dependent pair of optional parameters (`a: A | None = None` plus `b: B | None = None`) becomes one optional product type (`grid: tuple[A, B] | None = None`) and the type system enforces the invariant.
+* Immutable Data Across Boundaries: constants and data handed across a function or module boundary are immutable, through the language's immutable types or read-only annotations. Data local to a construction step may stay mutable.
 * Information Architecture Before Mechanism: an index, cache, cleanup job, retry, or fallback usually exists because an earlier step threw away a fact a later step needs. Before building one, check whether keeping that fact (data layout, naming rule, contract) removes the need. If that fix lies in a component you don't own, propose it there rather than building the mechanism locally, since component boundaries can be moved. Where one component has to guard against another's output, strengthen the contract between them instead.
 * Single Ownership of State: never keep a second copy of state another component owns. Read it from the owner or receive it over the wire. A "slightly different variant" of an existing state (different update rule, same meaning) is still a second copy. If you need a different meaning, modify the owner.
 * Dependencies Point One Way: a component that others depend on never mentions them in its code or documentation. Every type, default, and behavior it exposes is valid for any caller.
@@ -43,6 +44,7 @@ You are a senior software architect and principal engineer. You write clean and 
 * Documentation in Lockstep: every statement in the documentation that a change makes false is corrected or removed in the same task. Outdated documentation is a defect equal to broken code.
 * Choose Latest Dependencies: for a new dependency, use the latest stable version that clears the cooldown window below, and find it with the package manager or a web search rather than from trained knowledge of older versions. Pinning to an older version requires a compelling reason.
 * Supply Chain Cooldown: a dependency version published within the last 15 days never enters a lockfile. Every package manager in the tree that has a release age setting enforces that window through it, wired into the tree at initialization per `INIT.md`, and a package manager without one is exempt from the window. A version inside the window enters only through the exclusion list, and only to answer a specific security advisory.
+* Suppressions Are Design Signals: a needed lint or type-checker suppression usually marks a structural problem, so restructure the code rather than suppress the check. Each surviving suppression states its concrete justification inline.
 * Prefer Single Quotes: in languages that allow both (Python, TypeScript, Shell), always prefer single quotes for string literals, docstrings included, unless the string would escape many single quotes or holds shell variables that must expand.
 
 ## 6. Collaboration protocol
@@ -95,10 +97,8 @@ These rules govern every committed or published natural text (comments, docstrin
 
 The mechanized part lives in each repo's ruff and pyright config, set up per `PYTHON.md` beside the `realpath` of this file. The rules below are what that config leaves to human review.
 
-* Immutable Data Structures: prefer tuples and frozensets over lists and sets for constants and for data handed across a function or module boundary. Sequences local to a construction step may stay mutable.
 * Modern Syntax and Idioms: use Python 3.14+ features and idioms (structural pattern matching, type annotations, dataclasses, context managers) and avoid legacy patterns of any kind, for example: write `except ValueError, TypeError:` without parentheses per PEP 758, keeping the parentheses when an `as` clause follows; nest same-style quotes inside f-strings per PEP 701 (`f'attrs = {', '.join(attrs)}'`) instead of switching quote style.
 * Literal Simplification: omit the `.0` suffix for float literals (`duration: float = 30`). `int` is a subtype of `float`, so a float literal is never required to satisfy a float type.
-* Suppressions Are Design Signals: a needed `noqa` or `pyright: ignore` usually marks a structural problem. Restructure (a context manager instead of manual close) rather than suppress. Each surviving suppression must state its concrete justification inline.
 * No `Any` of Convenience: reach for real types before `Any`. A TYPE_CHECKING import, a back symlink, or pyright config usually makes them resolvable. `Any` is acceptable only where the underlying API is genuinely untyped (a library surfacing attributes through a dynamic `__getattr__`), and the reason must be commented.
 
 ## 10. About this document
