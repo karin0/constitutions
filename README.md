@@ -31,4 +31,4 @@ The documents that `AGENTS.md` governs are the product, so the Conventional Comm
 - `style`: wording and sentence structure, with every rule keeping its meaning.
 - `refactor`: a fact moved between clauses or documents, requiring the same thing afterwards.
 - `chore`: repository plumbing that states no rule.
-- `docs`: `README.md` and `AGENTS.md`, which describe the repository and how to change it rather than the rules.
+- `docs`: `README.md` and `AGENTS.md`, which describe the repository rather than the rules.
