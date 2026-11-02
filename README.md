@@ -1,8 +1,13 @@
 # CONSTITUTIONS
 
+The rules for changing this repository are in [AGENTS.md](AGENTS.md).
+
+## Install
+
 ```bash
-git clone https://github.com/karin0/constitutions.git ~/.constitutions
-mkdir -p ~/.claude/rules && ln -s ~/.constitutions/CONSTITUTIONS.md ~/.claude/rules/
+git clone https://github.com/karin0/constitutions ~/.constitutions
+mkdir -p ~/.claude/rules
+ln -s ~/.constitutions/CONSTITUTIONS.md ~/.claude/rules/
 ```
 
 Pi:
@@ -16,8 +21,6 @@ DeepSeek Harness:
 ```bash
 ln -s ~/.constitutions/CONSTITUTIONS.md ~/.dsh/AGENTS.md
 ```
-
-The rules for changing this repository are in [AGENTS.md](AGENTS.md).
 
 ## Commit types
 
