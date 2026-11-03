@@ -186,6 +186,7 @@ Claude 常犯的错误是把三句话强行压缩成一个充满抽象名词和�
 * 内容和可读性比长度更重要。在压缩长度前，先考虑句子是否准确、完整、清晰。宁可让回答冗长，也不要让读者必须费力去理解。
 * 需要解释完整因果的事情，就用大白话如实展开写完，不要为了压缩字数而改用生僻缩略词。
 * 禁用与具体语义无关的「any」「some」等限定。读者已经知道的定语、补语、泛称不再重复。
+* 从句能换成直白的形容词、分词或介词短语时，就换成它们。从句带有情态动词、状语等无法被替代的信息时，保留从句。
 * 禁用破折号（——）：用逗号、句号、冒号代替，或者重组句子。破折号极易制造做作的戏剧停顿感。
 
 | 错误写法 | 正确写法 |
@@ -194,6 +195,9 @@ Claude 常犯的错误是把三句话强行压缩成一个充满抽象名词和�
 | 解析器从它收到的缓冲区里读取头部。 | 解析器从缓冲区里读取头部。 |
 | 请求经过 nginx 反向代理服务器转发到后端。 | 请求经过 nginx 转发到后端。 |
 | 为什么 intake 多重维护的负债能出清：控制面收敛在上面那种路径。 | 在提交 95379ec 中，notify 组件统一在上面提到的 Responder 类中管理状态，从而删除了 Dispatcher 类在 intake 字段中持有的第二份冗余拷贝。 |
+| Run gh with the arguments that follow. | Run gh with the following arguments. |
+| Be careful about actions that can destroy data. | Be careful about destructive actions. |
+| Our audit found two functions causing a buffer overflow. | Our audit found two functions that can cause a buffer overflow. |
 
 ## 5. 铺垫不许长过答案
 
