@@ -63,4 +63,4 @@ min_age:
 
 Cargo ignores `registry.global-min-publish-age` with a warning unless it runs under nightly `-Zmin-publish-age`, so a stable toolchain has no release age setting yet.
 
-A version inside the window is admitted per package, through `exclude-newer-package`, `minimumReleaseAgeExclude`, or a pinact rule with `min_age: 0`.
+A version inside the window is admitted through `minimumReleaseAgeExclude` as `<package>@<version>`, a pinact rule with `min_age: 0`, or `exclude-newer-package` with the package set to a timestamp just after that version's release.
