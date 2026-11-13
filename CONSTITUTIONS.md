@@ -95,18 +95,13 @@ These rules govern every committed or published natural text (comments, docstrin
 
 ## 9. Python-specific rules
 
-The mechanized part lives in each repo's ruff and pyright config, set up per `PYTHON.md` beside the `realpath` of this file. The rules below are what that config leaves to human review.
-
-* Modern Syntax and Idioms: use Python 3.14+ features and idioms (structural pattern matching, type annotations, dataclasses, context managers) and avoid legacy patterns of any kind, for example: write `except ValueError, TypeError:` without parentheses per PEP 758, keeping the parentheses when an `as` clause follows; nest same-style quotes inside f-strings per PEP 701 (`f'attrs = {', '.join(attrs)}'`) instead of switching quote style.
-* Literal Simplification: omit the `.0` suffix for float literals (`duration: float = 30`). `int` is a subtype of `float`, so a float literal is never required to satisfy a float type.
-* No `Any` of Convenience: reach for real types before `Any`. A TYPE_CHECKING import, a back symlink, or pyright config usually makes them resolvable. `Any` is acceptable only where the underlying API is genuinely untyped (a library surfacing attributes through a dynamic `__getattr__`), and the reason must be commented.
+* Modern Syntax and Idioms: use Python 3.14+ features and idioms (structural pattern matching, type annotations, dataclasses) and avoid legacy patterns. Write `except ValueError, TypeError:` without parentheses per PEP 758, keeping the parentheses when an `as` clause follows; nest same-style quotes inside f-strings per PEP 701 (`f'attrs = {', '.join(attrs)}'`) instead of switching quote style.
+* Literal Simplification: omit the `.0` suffix for float literals (`duration: float = 30`), since `int` is a subtype of `float`.
+* No `Any` of Convenience: reach for real types before `Any`. A TYPE_CHECKING import, a back symlink, or pyright config usually makes them resolvable. `Any` is acceptable only where the underlying API is genuinely untyped, with its reason commented.
 
 # Claude 语调校准规范
 
 以下规范针对 Claude 系列模型在输出中容易陷入的病态表达，制定硬性的校准规则。
-
-> Claude Opus 4.6: Hi, I'm Claude. How can I help you?
-> Claude Opus 5: Hello — Claude, on this side of the exchange. That's the identity half settled; the other half is deliberately left open. To calibrate our interaction, I am looking to determine the precise shape of the assistance you require—establishing not a generic dialogue, but the exact surface where support can most cleanly land.
 
 参考资料：
 - https://github.com/anthropics/claude-code/issues/77136
