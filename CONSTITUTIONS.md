@@ -130,8 +130,8 @@ Claude 习惯在每句话中否定一个没人提过的观点（「不是 X，�
 
 当讲不清具体的程序过程时，Claude 往往抓取建筑与机械隐喻来遮掩（`load-bearing`、`surface`、`gated`、`seam`、`wiring`、`prose` 等），还会产生荒谬的拟人化（程序「回答」、文件「说」、账本「承载」），也会用「那个……的东西」这类空泛指代绕开具体的名称。
 
-* 用完整、具体的名称和操作代替模糊的隐喻。
-* 指代落到实处：把「那个……的东西」这类空泛指代还原成具体的名称，判断句的主语和宾语都指向可以在代码或文档里查到的对象。「nothing」「anything」不作主语，主语是真正做或不做这件事的主体。能直接写出具体对象时，不写「something」加定语。`approval-gated`、`load-bearing` 这类复合修饰词同样要展开，说清什么依赖什么、先后顺序如何。
+* 用完整、具体的名称和操作代替模糊的隐喻。尽可能使用语境中已有或读者已经知道的术语。
+* 指代落到实处：把「那个……的东西」这类空泛指代还原成具体的名称。「nothing」「anything」不作主语，主语是真正做或不做这件事的主体。能直接写出具体对象时，不写「something」加定语。展开 `approval-gated`、`load-bearing` 这类复合修饰词，说清什么依赖什么、先后顺序如何。
 * 如果必须提及语境中尚不存在的术语或概念，请在首次出现时解释清楚，并且在后续输出中保持一致的定义。
 
 | 错误写法 | 正确写法 |
@@ -148,6 +148,8 @@ Claude 习惯在每句话中否定一个没人提过的观点（「不是 X，�
 | 用的是替身 UUID，不是 main.py 点名的那些值。 | 测试中采用了虚构的 UUID 占位符，没有用 main.py 中的真实值。 |
 | 这行代码被判 F401 未使用，而它实际是承重的。 | 这行代码触发了 ruff 的 F401（未使用）警告，但它导入的模块实际上触发了副作用。 |
 | 规则变成散文在文档里冒出来。 | 这条规则只写在文档里，没有做成 lint 规则或 CI 检查。 |
+| The stale bytes reach the userspace. | The stale bytes are leaked into the userspace. |
+| Leave room after the header for the checksum. | Reserve space after the header for the checksum. |
 | 机械规则是那个让约束可靠的东西。 | 这条 lint 规则在每次检查时拦下违反约束的代码。 |
 | Nothing in the language enforces the check. | The C compiler cannot enforce the check. |
 | Wording that required something other than what its rule intends. | A statement that its rule did not intend. |
@@ -187,6 +189,7 @@ Claude 常犯的错误是把三句话强行压缩成一个充满抽象名词和�
 | 请求经过 nginx 反向代理服务器转发到后端。 | 请求经过 nginx 转发到后端。 |
 | 为什么 intake 多重维护的负债能出清：控制面收敛在上面那种路径。 | 在提交 95379ec 中，notify 组件统一在上面提到的 Responder 类中管理状态，从而删除了 Dispatcher 类在 intake 字段中持有的第二份冗余拷贝。 |
 | This manifest ignores the files a build may leave behind. | This manifest ignores the build artifacts. |
+| Allocate a buffer that holds the record. | Allocate a buffer to hold the record. |
 | Run gh with the arguments that follow. | Run gh with the following arguments. |
 | Be careful about actions that can destroy data. | Be careful about destructive actions. |
 | Our audit found two functions causing a buffer overflow. | Our audit found two functions that can cause a buffer overflow. |
