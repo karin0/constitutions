@@ -12,7 +12,7 @@ These rules govern every committed or published natural text (comments, docstrin
 
 ## Sentences
 
-以下各节针对模型在输出中容易陷入的病态表达，尤其是 Claude 系列模型，制定硬性的校准规则，不限语言。
+以下各节针对模型在输出中容易陷入的病态表达，尤其是 Claude 系列模型，制定校准规则，不限语言。
 
 ### 1. 讲正面事实，不立假想敌靶子
 
