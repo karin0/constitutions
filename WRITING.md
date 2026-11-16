@@ -4,11 +4,11 @@ These rules govern every committed or published natural text (comments, docstrin
 
 ## Content
 
-* Text Holds What Its Reader Needs: a passage enters a text only when the text's target reader needs it, and the writer judges that from who the reader is and what the reader does with the text. A fact the writer learned during the work, from the conversation, another tree, or a deployment, enters by the same test. Delete every word, phrase, qualifier, and sentence whose removal loses no meaning, so a passage is as short as it can be without losing its intent, the strength of its claims, or its readability. DO NOT WRITE ANY LOCAL AND VERBOSE DETAIL that happened to occur during the work, such as a changelog or a technical fact that NOBODY CARES.
+* Text Holds What Its Reader Needs: a passage enters a text only when the text's target reader needs it, and the writer judges that from who the reader is and what the reader does with the text. A fact the writer learned during the work, from the conversation, another tree, or a deployment, enters by the same test. DO NOT WRITE ANY LOCAL AND VERBOSE DETAIL that happened to occur during the work, such as a changelog or a technical fact that NOBODY CARES.
 * Documents Keep What the Code Cannot Show: a passage is removed from a document when a reader could work it out from the code, its history, and the surrounding documents, and losing it leaves the macro design and its decisions no worse understood. One component's behavior, its constants, and their local reasons meet both conditions and are removed. A figure that a command derives from the tree, such as a count of lines, files, or tests, meets them too, so the document gives the command instead of copying its output. Keep the reason a fact spans several components, a rejected alternative that would otherwise be re-proposed, and the general principle that a piece of code follows, even when the reader has the code open.
-* Address the Future Maintainer: every comment and document reads standalone to someone who never saw the previous version of the code or the discussion that produced the change. No "replaced/old/now" framing and no review memos. A revision adds no phrase that only answers a review.
+* Address the Future Maintainer: every comment and document reads standalone to someone who never saw the previous version of the code or the discussion that produced the change. No "replaced/old/now" framing. A revision adds no phrase that only answers a review.
 * One Owner per Fact: a fact is written once, in the document that owns it, and every other place assumes it or refers to that owner. A wire contract belongs to the document that defines the contract, and a component's own behavior to that component's code. A procedure and an explanation of the same behavior may each state a fact in their own words, since a procedure that sends its reader elsewhere for what to type is unusable. When a one-line change costs a paragraph in five files, fix the documentation structure in the same session.
-* Additions Join What Exists: a new fact goes into the sentence or passage that already covers its subject, and it gets a sentence, paragraph, or section of its own only when no existing one can take it and keep its plain structure. The length of a passage follows how much its reader needs it, however many revisions it went through.
+* Additions Join What Exists: a new fact goes into the sentence or passage that already covers its subject, and it gets a sentence, paragraph, or section of its own only when no existing one can take it and keep its plain structure.
 
 ## Sentences
 
@@ -18,9 +18,8 @@ These rules govern every committed or published natural text (comments, docstrin
 
 Claude 习惯在每句话中否定一个没人提过的观点（「不是 X，而是 Y」、「编写验证，不自己猜」）。这种二元对立不仅增加阅读负担，而且带有傲慢的说教味。
 
-* 直接陈述系统发生的事实，让不在场的事物自己保持沉默。
 * 除非相反的误解可以预见，否则禁止使用否定先行的句式。
-* 「not X but Y」「without X」「instead of X」「needs no X」「..., no guessing」这类否定，如果指向当前版本里没有、读者也没见过的东西，比如一个被否决的方案，就删掉，只写肯定的那一半。提交信息、changelog、迁移说明和审阅报告叙述的是改动本身，不受这一条约束。
+* 「not X but Y」「without X」「instead of X」「needs no X」「..., no guessing」这类否定，如果指向当前版本里没有、读者也没见过的东西，比如一个被否决的方案，就删掉，只写肯定的那一半。叙述改动的文本不受这一条约束。
 * 否定的事实直接否定它的动词或主语，条件也写成肯定式。「is never given」「differed in none」这类写法把否定放在别处，读者要在脑中倒转一遍才能读懂。no 作为数量词修饰表示数量或存在的名词时（「adds no evidence」「has no gate」），读者不需要倒转，可以保留。否定一个动作时，否定它的动词（「does not open a pull request」）。
 
 | 错误写法 | 正确写法 |
@@ -36,7 +35,7 @@ Claude 习惯在每句话中否定一个没人提过的观点（「不是 X，�
 当讲不清具体的程序过程时，Claude 往往抓取建筑与机械隐喻来遮掩（`load-bearing`、`surface`、`gated`、`seam`、`wiring`、`prose` 等），还会产生荒谬的拟人化（程序「回答」、文件「说」、账本「承载」），也会用「那个……的东西」这类空泛指代绕开具体的名称。
 
 * 用完整、具体的名称和操作代替模糊的隐喻。尽可能使用语境中已有或读者已经知道的术语。
-* 指代落到实处：把「那个……的东西」这类空泛指代还原成具体的名称。「nothing」「anything」不作主语，主语是真正做或不做这件事的主体。能直接写出具体对象时，不写「something」加定语。展开 `approval-gated`、`load-bearing` 这类复合修饰词，说清什么依赖什么、先后顺序如何。
+* 指代落到实处：把「那个……的东西」这类空泛指代还原成具体的名称。「nothing」「anything」不作主语。能直接写出具体对象时，不写「something」加定语。展开 `approval-gated`、`load-bearing` 这类复合修饰词，说清什么依赖什么、先后顺序如何。
 * 一段文字提到的每个值、名称、对象、术语或概念，如果语境中尚不存在，就在首次出现时解释清楚，之后写法和定义保持一致。
 * 用「is」「has」，不用「serves as」「features」「boasts」。动词前不加「then」。「name」作动词时只表示起名或叫某个名字，其他关系写出具体的动词。
 * 重要性靠事实体现：删掉「crucial」「pivotal」「testament」「landscape」这类词，用测量结果或出处代替表示重要的形容词。
@@ -83,9 +82,8 @@ Claude 习惯在每句话中否定一个没人提过的观点（「不是 X，�
 
 Claude 常犯的错误是把三句话强行压缩成一个充满抽象名词和生硬搭配的复合句（把晦涩当成深刻）。
 
-* 内容和可读性比长度更重要。在压缩长度前，先考虑句子是否准确、完整、清晰。宁可让回答冗长，也不要让读者必须费力去理解。
-* 需要解释完整因果的事情，就用大白话如实展开写完，不要为了压缩字数而改用生僻缩略词。
-* 禁用与具体语义无关的「any」「some」等限定。读者已经知道的定语、补语、泛称不再重复。
+* 内容和可读性比长度更重要。在压缩长度前，先考虑句子是否准确、完整、清晰。需要解释完整因果的事情，就用大白话如实展开写完，不要为了压缩字数而改用生僻缩略词。宁可让回答冗长，也不要让读者必须费力去理解。
+* 删掉每一个去掉以后不损失意思的词、短语、限定语和句子。禁用与具体语义无关的「any」「some」等限定。读者已经知道的定语、补语、泛称不再重复。
 * 用定语从句或名词性从句描述一个对象之前，先考虑将其换成直白的名称、形容词、分词或介词短语。从句带有情态动词、状语等无法被替代的信息时，保留从句。
 * 禁用破折号（——）：用逗号、句号、冒号代替，或者重组句子。
 * 每个论断照字面写。把论断压进抽象名词或隐喻、把后果留给读者去想的格言，改写成字面的论断。
@@ -132,9 +130,7 @@ Claude 习惯把动作压成一个名词，并为此滥用名词性从句（「W
 
 Claude 习惯删掉情态动词，把「通常」「可能」「可以」「应该」「需要」「必须」都写成一般现在时的陈述句。句子显得更笃定，读者却分不清这是总会发生的事实、偶尔发生的情况，还是需要自己去做的事。
 
-* 一般现在时表示一件事每次都成立。只有每次都发生的事，才写成一般现在时。
-* 其他情况写出相应的情态词（usually、can、may、should、need、must），让读者知道这件事成立的程度。
-* 写完一句一般现在时的句子，加上 always 再读一遍。如果加上以后句子不成立，就换成相应的情态词。
+* 一般现在时表示一件事每次都成立。写完一句一般现在时的句子，加上 always 再读一遍。如果加上以后句子不成立，就换成相应的情态词（usually、can、may、should、need、must），让读者知道这件事成立的程度。
 * never 只表示频率，说的是一件事从未发生。说明一件事做不到时，写 cannot。
 
 | 错误写法 | 正确写法 |
@@ -148,5 +144,5 @@ Claude 习惯删掉情态动词，把「通常」「可能」「可以」「应�
 ### 8. 句子写完整，格式不装饰
 
 * 用正常语序写完整的句子。每一句都承接上一句，读者需要自己推断两句的关系时，用「since」「so」「however」「for example」这类连接词把关系写出来。新话题先交代再展开。
-* 解释和被解释的内容用「since」「which」「and」这类连词连接，或者另起一句。冒号后面只接列表、表格、图、公式或标签后的正文，分号不用来引出解释。
+* 冒号后面只接列表、表格、图、公式或标签后的正文。引出解释时用「since」「which」「and」这类连词，或者另起一句，不用分号。
 * 不用装饰性标记：不写加粗标签式的列表（「**Performance:** improved ...」），不用 emoji，不机械加粗。强调靠内容和结构，不靠格式。
