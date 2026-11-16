@@ -47,6 +47,13 @@ Every package manager in the tree that has a release age setting refuses depende
 
 The uv setting is part of the pyproject skeleton in `PYTHON.md` beside this file.
 
+Cargo, in `.cargo/config.toml`:
+
+```toml
+[registry]
+global-min-publish-age = '15 days'
+```
+
 pnpm, in `pnpm-workspace.yaml`, in minutes:
 
 ```yaml
@@ -61,6 +68,6 @@ min_age:
   value: 15
 ```
 
-Cargo ignores `registry.global-min-publish-age` with a warning unless it runs under nightly `-Zmin-publish-age`, so a stable toolchain has no release age setting yet.
-
 A version inside the window is admitted through `minimumReleaseAgeExclude` as `<package>@<version>`, a pinact rule with `min_age: 0`, or `exclude-newer-package` with the package set to a timestamp just after that version's release.
+
+For Cargo, `CARGO_RESOLVER_INCOMPATIBLE_PUBLISH_AGE=allow cargo update <package> --precise <version>` writes that one version into `Cargo.lock`. Until the version clears the window, a `cargo update` that covers the package, such as one without arguments, moves it back to an older version, so the command must be repeated afterwards.
