@@ -7,7 +7,7 @@ The rules for changing this repository are in [AGENTS.md](AGENTS.md).
 ```bash
 git clone https://github.com/karin0/constitutions ~/.constitutions
 mkdir -p ~/.claude/rules
-ln -s ~/.constitutions/CONSTITUTIONS.md ~/.claude/rules/
+ln -s ~/.constitutions/CONSTITUTIONS.md ~/.constitutions/WRITING.md ~/.claude/rules/
 ```
 
 Pi:
