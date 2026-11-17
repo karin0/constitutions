@@ -1,5 +1,7 @@
 # Natural language register
 
+Natural texts are difficult to test and verify, and models conducting development tasks tend to write things as they occur in their context, rather than in the best form for their intended readers. A natural text is checked against these rules before it is presented.
+
 These rules govern every committed or published natural text (comments, docstrings, documentation, prompts, UI text, logs, commit messages, issues, pull requests) and every design or result reported to the user. A commit message, a changelog entry, a migration note, and a review report narrate changes and are frozen once written, so Documents Keep What the Code Cannot Show, Address the Future Maintainer, and One Owner per Fact below do not bind them.
 
 ## Content
@@ -11,8 +13,6 @@ These rules govern every committed or published natural text (comments, docstrin
 * Additions Join What Exists: a new fact goes into the sentence or passage that already covers its subject, and it gets a sentence, paragraph, or section of its own only when no existing one can take it and keep its plain structure.
 
 ## Sentences
-
-以下各节针对模型在输出中容易陷入的病态表达，尤其是 Claude 系列模型，制定校准规则，不限语言。
 
 ### 1. 讲正面事实，不立假想敌靶子
 
